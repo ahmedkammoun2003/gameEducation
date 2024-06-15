@@ -10,10 +10,9 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  password: {
-    type: String,
-    required: true
-  },
+  classes:[{
+    classID:mongoose.Schema.Types.ObjectId
+  }],
   type:{
     type: String,
     required: true,

@@ -1,8 +1,8 @@
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: process.env.VITE_googleAPI,
+  apiKey: import.meta.env.VITE_GOOGLEAPI,
   authDomain: "education-f7ceb.firebaseapp.com",
   projectId: "education-f7ceb",
   storageBucket: "education-f7ceb.appspot.com",
@@ -11,7 +11,4 @@ const firebaseConfig = {
   measurementId: "G-V03RPW4R6H"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
-export {auth, provider};
+export const app = initializeApp(firebaseConfig);
