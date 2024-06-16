@@ -1,12 +1,13 @@
 import { app } from "../config/firebase.config.js";
 import { GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
-export default function Oauth({ className, text }) {
+export default function Oauth({ className, text,type }) {
+  let user;
   const signIn = () => {
     const provider = new GoogleAuthProvider();
     const auth = getAuth(app);
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result.user);
+        user = result.user;
       })
       .catch((error) => {
         // Handle Errors here.
@@ -18,8 +19,9 @@ export default function Oauth({ className, text }) {
       });
   };
   return (
-    <button onClick={signIn} className={className}>
+    <button onClick={signIn} className={className} type={type}>
       {text}
     </button>
   );
+  return user; // export the result.user
 }
