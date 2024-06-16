@@ -12,6 +12,7 @@ export default function Header() {
       <div className="text-white flex gap-6">
         <h1 className="">HOME</h1>
         <span>SIGNIN</span>
+        <span>SIGNUP</span>
       </div>
     </div>
   );

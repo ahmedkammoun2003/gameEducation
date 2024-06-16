@@ -9,7 +9,8 @@ export default function () {
         style={{  backgroundImage: `url(${knight})`}}
       >
         
-        <Oauth className="text-white bg-black p-3 opacity-70 rounded-lg" text="SIGN WITH GOOGLE"/>
+        <Oauth className="text-white bg-black p-3 opacity-70 rounded-lg" text="SIGN AS A TEACHER" type="teacher"/>
+        <Oauth className="text-white bg-black p-3 opacity-70 rounded-lg" text="SIGN AS A STUDENT" type="student"/>
       </div>
     </div>
   );
