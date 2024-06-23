@@ -1,4 +1,5 @@
 import authRouter from "./router/auth.route.js"
+import courseRouter from "./router/course.route.js"
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
@@ -19,6 +20,7 @@ app.use(cors({
   credentials:true,
 }))
 app.use("/api/auth",authRouter);
+app.use("/api",courseRouter);
 app.get('/', (req, res) => {
   res.send('Welcome to my Express server!');
 });
